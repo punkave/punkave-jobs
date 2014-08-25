@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% include "pageMacros.html" %}
+
+{% block marquee %}
+  <div class="top">
+    <header>
+      <div class="logo"><img src="img/top-logo.png"></div>
+      {% block title %} {{ page.title | e }} {% endblock %}
+
+    </header>
+
+    <div class="loop">
+      <video autoplay loop preload>
+        <source src="video/punkbg-2.webm" type="video/webm; codecs=vp8,vorbis">
+        <source src="video/punkbg-2.mp4"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+        <source src="video/punkbg-2.ogv"  type="video/ogg; codecs=theora,vorbis">
+      </video>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}

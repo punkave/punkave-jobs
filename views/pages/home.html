@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block bodyClass %}{{ super() }} home-page{% endblock %}
+
+
+{% block sections %}
+  <div class="sections">
+    {# Allow one and two-column blocks in this region #}
+    {{ aposBlocks(page, 'main', [ 'full', 'footer' ]) }}
+  </div>
+{% endblock %}
