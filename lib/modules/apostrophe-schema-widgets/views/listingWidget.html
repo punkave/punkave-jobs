@@ -1,0 +1,11 @@
+<div class="listing-widget">
+	<a href="{{item._page.slug}}" class="listing-thumbnail">
+		<img class="logo" src="{{ aposFilePath(item.thumbnail.items[0]._items[0]) }}" alt="{{ item._page.title }}">
+	</a>
+	<div class="listing-description">
+		<h3><a href="{{item._page.slug}}">{{ item._page.title }}</a></h3>
+		<p>
+			{{ aposAreaPlaintext({ area: item.description }) | e }}	
+		</p>
+	</div>
+</div>
