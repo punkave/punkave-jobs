@@ -54,6 +54,39 @@ var site = require('apostrophe-site')({
         from: 'Tommy Boutell <tom@example.com>'
       }
     },
+    'apostrophe-schema-widgets': {
+      widgets: [
+        {
+          name: 'listingWidget',
+          label: 'Listing',
+          schema: [
+            {
+              name: '_page',
+              type: 'joinByOne',
+              withType: 'page',
+              idField: 'aPageId',
+              label: 'Page (Just Choose One)',
+              getOptions: {
+                fields: { slug: 1, path: 1, level:1, rank: 1, title: 1, main: 1 }
+              }
+            },
+            {
+              name: 'description',
+              label: 'Description',
+              type: 'area',
+              options: { textOnly: true, controls: [] }
+            },
+            {
+              name: 'thumbnail',
+              label: 'Image',
+              type: 'singleton',
+              widgetType: 'slideshow',
+              options: { limit: 1 }
+            }
+          ]
+        }
+      ]
+    },
     'apostrophe-groups': {},
     'apostrophe-map':      {},
     // The new editor
